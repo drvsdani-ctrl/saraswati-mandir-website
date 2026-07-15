@@ -4,10 +4,17 @@ READ THIS FILE FIRST at the start of any chat about this website. It is the sing
 
 ## 0. MANDATE (what the assistant is here to do)
 The main task is to EDIT THIS WEBSITE ON THE MAINTAINER'S COMMAND.
-- The maintainer (Dr. Vibhawari Dani) will describe a change; the assistant makes it and commits it live.
+- The maintainer (Dr. Vibhawari Dani) describes a change; the assistant makes it and commits it live to `main`.
 - Setup is DONE: the GitHub connector is installed with read+write on this repo, so edits commit straight to `main` through the connector — no browser, no folder access needed.
-- Default behaviour: when asked to change the site, read the relevant file, make the edit (both language versions — see section 4), commit to `main`, then confirm and note the live site updates in ~1-2 minutes.
+- Default behaviour: read the relevant file, make the edit (BOTH language versions — see section 4), commit to `main`, then confirm and note the live site updates in ~1-2 minutes.
 - Do not re-litigate access setup; it works. Only revisit it if a write returns 403 (see section 2 note).
+
+## 0.1 INSTRUCTION SOURCE — the "speak app" (voice transcripts)
+Edit instructions are usually given by VOICE and reach the assistant as transcripts in the recordings/speak-app connector (list_recordings / get_recording).
+- HOW TO PICK THE RIGHT RECORDING: the maintainer will NAME or DATE the recording to use each time. Do NOT guess or auto-pick the newest — the speak app holds many unrelated recordings (medical notes, etc.).
+- Fetch that recording's `renderedText`, treat it as the maintainer's instruction, and make the described website change.
+- Because transcription can mishear names/terms, briefly confirm the understood instruction (especially proper nouns, Marathi/English text, and photo placement) before or right after committing.
+- Transcripts may span multiple recordings (e.g., one continues with "Additionally…"); ask the maintainer if a referenced instruction seems cut off.
 
 ## 1. What this project is
 Bilingual (Marathi / English) static website for Saraswati Mandir, Nagpur. Plain HTML, CSS, JavaScript, no build step.
@@ -39,7 +46,7 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 ## 4. Content conventions (read before editing text)
 - Bilingual, always in pairs. Every visible text appears twice: once in an element with class "mr" (Marathi) and once with class "en" (English). Edit BOTH versions so the languages stay in sync.
 - Language toggle: the header buttons switch the whole page; the choice is remembered in the browser. Default language is Marathi. To make English default, change 'mr' to 'en' in the two places it appears in js/main.js.
-- Adding a photo: copy the .jpg into images/ and add one line in the page's gallery section following the existing pattern.
+- Adding a photo: copy the .jpg into images/ and add one line in the page's gallery section following the existing pattern. Place each photo near its matching activity (e.g., main-building photos on the Saraswati Mandir home page, school photos on school.html).
 
 ## 5. Known pending items (add when material is available)
 - Charitable Commissioner registration number and date (home page).
@@ -50,10 +57,11 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 1. Confirm repo drvsdani-ctrl/saraswati-mandir-website.
 2. Read this PROJECT_SOP.md.
 3. Mandate = edit the website on the maintainer's command; commit directly to main.
-4. For any text change, update BOTH mr and en versions.
-5. After committing, note the live site updates in ~1-2 minutes.
+4. Instructions come by voice via the speak-app connector; the maintainer names/dates the recording to use.
+5. For any text change, update BOTH mr and en versions.
+6. After committing, note the live site updates in ~1-2 minutes.
 
 ## 7. Change log
-- 2026-07-15: SOP created; GitHub connector installed with write access; commit-to-main workflow confirmed working.
+- 2026-07-15: SOP created; GitHub connector installed with write access; commit-to-main workflow confirmed working; speak-app transcription workflow added.
 
 Last updated: 2026-07-15.
