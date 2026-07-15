@@ -2,18 +2,26 @@
 
 READ THIS FILE FIRST at the start of any chat about this website. It is the single source of truth for the project. Keep it up to date after meaningful changes. (A copy of this SOP also lives in the local folder B:\saraswati-mandir-website.)
 
+## ⚠️ TOP GUARDRAIL — PREVIEW FIRST, PUBLISH ONLY ON PASSWORD "BUILD"
+THIS OVERRIDES EVERYTHING ELSE. Before making ANY actual change to the website:
+1. Prepare the change and DISPLAY A PREVIEW in the chat — show the exact before → after for BOTH the mr and en versions, and name the file(s) affected.
+2. DO NOT publish or commit anything to the repo / live site yet.
+3. WAIT for the maintainer to reply with the password: BUILD.
+4. Only AFTER receiving "BUILD" do you commit to main. No commits, pushes, or writes to the live repo before that.
+If in doubt, preview and wait. This is the single most important rule.
+
 ## 0. MANDATE (what the assistant is here to do)
 The main task is to EDIT THIS WEBSITE ON THE MAINTAINER'S COMMAND.
-- The maintainer (Dr. Vibhawari Dani) describes a change; the assistant makes it and commits it live to `main`.
+- The maintainer (Dr. Vibhawari Dani) describes a change; the assistant PREPARES it, PREVIEWS it in chat, and commits to `main` ONLY after the password "BUILD" (see TOP GUARDRAIL).
 - Setup is DONE: the GitHub connector is installed with read+write on this repo, so edits commit straight to `main` through the connector.
-- Default behaviour: read the relevant file, make the edit (BOTH language versions — see section 4), commit to `main`, then confirm and note the live site updates in ~1-2 minutes.
+- Default behaviour: read the relevant file, prepare the edit (BOTH language versions — see section 4), show a PREVIEW in chat, WAIT for "BUILD", then commit to `main` and note the live site updates in ~1-2 minutes.
 - Do not re-litigate access setup; it works. Only revisit it if a write returns 403 (see section 2 note).
 
 ## 0.1 INSTRUCTION SOURCE — the "speak app" (voice transcripts)
 Edit instructions are usually given by VOICE and reach the assistant as transcripts in the recordings/speak-app connector (list_recordings / get_recording).
-- HOW TO PICK THE RIGHT RECORDING: the maintainer will NAME or DATE the recording to use each time (often via the "Speak App — Transcript Picker" artifact's "Use this" button). Do NOT guess or auto-pick the newest — the speak app holds many unrelated recordings (medical notes, etc.).
-- Fetch that recording's `renderedText`, treat it as the instruction, and make the described change.
-- Because transcription can mishear names/terms, briefly confirm the understood instruction (proper nouns, Marathi/English text, photo placement) before or right after committing.
+- HOW TO PICK THE RIGHT RECORDING: the maintainer will GIVE THE RECORDING ID (the "code"), or its name/date, usually with a "fetch" command (e.g. "fetch <id>", "fetch 2", "fetch latest website"). If the maintainer says "list", call list_recordings and show a short numbered list so they can pick. Do NOT guess or auto-pick the newest — the speak app holds many unrelated recordings (medical notes, etc.). (No picker artifact is used.)
+- Fetch that recording's `renderedText`, treat it as the instruction, and prepare the described change (then follow the TOP GUARDRAIL).
+- Because transcription can mishear names/terms, confirm the understood instruction (proper nouns, Marathi/English text, photo placement) as part of the preview.
 - Transcripts may span multiple recordings (one may continue with "Additionally…"); ask if an instruction seems cut off.
 
 ## 0.2 CORRECTIONS LOG — learn from past mistakes (LOCAL FILE, not in this repo)
@@ -34,7 +42,7 @@ Bilingual (Marathi / English) static website for Saraswati Mandir, Nagpur. Plain
 
 ## 2. How to work on this site
 1. Edits are committed to GitHub via the connector (the app is INSTALLED with read+write). The local folder holds a working copy plus the local CORRECTIONS.md and a copy of this SOP.
-2. Edit method: commit directly to `main`. Changes go live in ~1-2 minutes. Use a pull request only for large changes the maintainer wants to preview.
+2. Edit method: PREVIEW in chat first; commit to `main` ONLY after the maintainer sends the password "BUILD" (see TOP GUARDRAIL). Changes go live ~1-2 minutes after commit.
 3. Use clear commit messages.
 4. Fetch the current file fresh before editing (its SHA is required to update it on GitHub).
 5. Verify after editing, checking both language versions. When a commit requires sending the WHOLE file, change only the target text and check for stray/control characters before and after (diff against the clean local copy).
@@ -63,8 +71,8 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 ## 6. Start-of-chat checklist
 1. Confirm repo drvsdani-ctrl/saraswati-mandir-website; connect local folder B:\saraswati-mandir-website.
 2. Read this PROJECT_SOP.md, then read the local CORRECTIONS.md.
-3. Mandate = edit the website on the maintainer's command; commit directly to main.
-4. Instructions come by voice via the speak-app connector; the maintainer names/dates the recording.
+3. Mandate = edit the website on the maintainer's command; PREVIEW in chat, then commit to main ONLY after password "BUILD".
+4. Instructions come by voice via the speak-app connector; the maintainer fetches a recording by id/name/date.
 5. For any text change, update BOTH mr and en versions.
 6. After committing, note the live site updates in ~1-2 minutes.
 7. If the maintainer gives a correction, append it to the local CORRECTIONS.md.
@@ -72,5 +80,6 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 ## 7. Change log
 - 2026-07-15: SOP created; connector installed with write access; commit-to-main confirmed; speak-app transcription workflow added; CORRECTIONS.md kept as a LOCAL file per maintainer (removed from repo).
 - 2026-07-15: Added Charity Commissioner registration number F-259(N) and date 16.04.1962 to the home-page footer (both languages).
+- 2026-07-15: Added TOP GUARDRAIL — always PREVIEW in chat before any change; do NOT publish/commit until the maintainer gives the password "BUILD".
 
 Last updated: 2026-07-15.
