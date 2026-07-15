@@ -1,4 +1,4 @@
-PROJECT_SOP.md# PROJECT SOP — Saraswati Mandir, Nagpur Website (assistant reference, not a public page)
+# PROJECT SOP — Saraswati Mandir, Nagpur Website (assistant reference, not a public page)
 
 Read this file first at the start of any chat about this website. It is the single source of truth for how to work on the project.
 
@@ -12,12 +12,12 @@ Bilingual (Marathi / English) static website for Saraswati Mandir, Nagpur. Plain
 - Hosting: GitHub Pages, branch main, folder / (root)
 
 ## 2. How to work on this site
-1. Access is via the GitHub connector, no local folder needed.
+1. Access is via the GitHub connector, no local folder needed. The Claude Github MCP Connector app is INSTALLED on this repo with read+write, so commits work directly through the connector (no browser needed).
 2. Edit method: commit directly to main. Changes go live in ~1-2 minutes. Use a pull request only for large changes the maintainer wants to preview.
 3. Use clear commit messages.
 4. Fetch the current file fresh before editing (SHA required to update).
 5. Verify after editing, checking both language versions.
-Note: the connected GitHub account must have write access. A 403 "Resource not accessible by integration" means write access is missing.
+Note: if a write ever returns 403 "Resource not accessible by integration," the app was uninstalled — reinstall it at github.com/apps/claude-github-mcp-connector and select this repo.
 
 ## 3. Site structure (pages)
 - index.html — Saraswati Mandir (home, links to all activities)
