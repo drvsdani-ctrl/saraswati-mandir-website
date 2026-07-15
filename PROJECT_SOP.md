@@ -1,6 +1,13 @@
 # PROJECT SOP — Saraswati Mandir, Nagpur Website (assistant reference, not a public page)
 
-Read this file first at the start of any chat about this website. It is the single source of truth for how to work on the project.
+READ THIS FILE FIRST at the start of any chat about this website. It is the single source of truth for the project. Keep it up to date after meaningful changes.
+
+## 0. MANDATE (what the assistant is here to do)
+The main task is to EDIT THIS WEBSITE ON THE MAINTAINER'S COMMAND.
+- The maintainer (Dr. Vibhawari Dani) will describe a change; the assistant makes it and commits it live.
+- Setup is DONE: the GitHub connector is installed with read+write on this repo, so edits commit straight to `main` through the connector — no browser, no folder access needed.
+- Default behaviour: when asked to change the site, read the relevant file, make the edit (both language versions — see section 4), commit to `main`, then confirm and note the live site updates in ~1-2 minutes.
+- Do not re-litigate access setup; it works. Only revisit it if a write returns 403 (see section 2 note).
 
 ## 1. What this project is
 Bilingual (Marathi / English) static website for Saraswati Mandir, Nagpur. Plain HTML, CSS, JavaScript, no build step.
@@ -12,12 +19,12 @@ Bilingual (Marathi / English) static website for Saraswati Mandir, Nagpur. Plain
 - Hosting: GitHub Pages, branch main, folder / (root)
 
 ## 2. How to work on this site
-1. Access is via the GitHub connector, no local folder needed. The Claude Github MCP Connector app is INSTALLED on this repo with read+write, so commits work directly through the connector (no browser needed).
-2. Edit method: commit directly to main. Changes go live in ~1-2 minutes. Use a pull request only for large changes the maintainer wants to preview.
+1. Access is via the GitHub connector, no local folder needed. The Claude Github MCP Connector app is INSTALLED on this repo with read+write, so commits work directly through the connector.
+2. Edit method: commit directly to `main`. Changes go live in ~1-2 minutes. Use a pull request only for large changes the maintainer wants to preview.
 3. Use clear commit messages.
-4. Fetch the current file fresh before editing (SHA required to update).
+4. Fetch the current file fresh before editing (its SHA is required to update it).
 5. Verify after editing, checking both language versions.
-Note: if a write ever returns 403 "Resource not accessible by integration," the app was uninstalled — reinstall it at github.com/apps/claude-github-mcp-connector and select this repo.
+Note: if a write ever returns 403 "Resource not accessible by integration," the app was uninstalled — reinstall it at github.com/apps/claude-github-mcp-connector, click Install, and select this repo (ignore the "state: Field required" redirect error; the install still registers).
 
 ## 3. Site structure (pages)
 - index.html — Saraswati Mandir (home, links to all activities)
@@ -30,11 +37,11 @@ Note: if a write ever returns 403 "Resource not accessible by integration," the 
 Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: README.md, CNAME, .nojekyll.
 
 ## 4. Content conventions (read before editing text)
-- Bilingual, always in pairs. Every visible text appears twice: once in an element with class "mr" (Marathi) and once with class "en" (English). Edit BOTH versions.
+- Bilingual, always in pairs. Every visible text appears twice: once in an element with class "mr" (Marathi) and once with class "en" (English). Edit BOTH versions so the languages stay in sync.
 - Language toggle: the header buttons switch the whole page; the choice is remembered in the browser. Default language is Marathi. To make English default, change 'mr' to 'en' in the two places it appears in js/main.js.
 - Adding a photo: copy the .jpg into images/ and add one line in the page's gallery section following the existing pattern.
 
-## 5. Known pending items
+## 5. Known pending items (add when material is available)
 - Charitable Commissioner registration number and date (home page).
 - Exact years of the school's grant milestones (school.html).
 - A photograph of the Khandoba Balwadi (khandoba.html).
@@ -42,8 +49,11 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 ## 6. Start-of-chat checklist
 1. Confirm repo drvsdani-ctrl/saraswati-mandir-website.
 2. Read this PROJECT_SOP.md.
-3. Default edit method = commit directly to main.
-4. For any text change, update both mr and en versions.
-5. Live site updates ~1-2 minutes after commit.
+3. Mandate = edit the website on the maintainer's command; commit directly to main.
+4. For any text change, update BOTH mr and en versions.
+5. After committing, note the live site updates in ~1-2 minutes.
+
+## 7. Change log
+- 2026-07-15: SOP created; GitHub connector installed with write access; commit-to-main workflow confirmed working.
 
 Last updated: 2026-07-15.
