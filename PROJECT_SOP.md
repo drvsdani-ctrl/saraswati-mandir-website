@@ -11,10 +11,16 @@ The main task is to EDIT THIS WEBSITE ON THE MAINTAINER'S COMMAND.
 
 ## 0.1 INSTRUCTION SOURCE — the "speak app" (voice transcripts)
 Edit instructions are usually given by VOICE and reach the assistant as transcripts in the recordings/speak-app connector (list_recordings / get_recording).
-- HOW TO PICK THE RIGHT RECORDING: the maintainer will NAME or DATE the recording to use each time. Do NOT guess or auto-pick the newest — the speak app holds many unrelated recordings (medical notes, etc.).
+- HOW TO PICK THE RIGHT RECORDING: the maintainer will NAME or DATE the recording to use each time (often via the "Speak App — Transcript Picker" artifact's "Use this" button). Do NOT guess or auto-pick the newest — the speak app holds many unrelated recordings (medical notes, etc.).
 - Fetch that recording's `renderedText`, treat it as the maintainer's instruction, and make the described website change.
 - Because transcription can mishear names/terms, briefly confirm the understood instruction (especially proper nouns, Marathi/English text, and photo placement) before or right after committing.
 - Transcripts may span multiple recordings (e.g., one continues with "Additionally…"); ask the maintainer if a referenced instruction seems cut off.
+
+## 0.2 CORRECTIONS LOG — learn from past mistakes (CORRECTIONS.md)
+CORRECTIONS.md in this repo is the assistant's memory of mistakes and the maintainer's corrections.
+- READ CORRECTIONS.md at the start of every chat (right after this SOP) and honour every rule in it.
+- Whenever the maintainer points out a mistake or gives a correction, APPEND a new entry (newest at top of its log) to CORRECTIONS.md and commit it to main.
+- Before any edit, scan CORRECTIONS.md for a rule that applies.
 
 ## 1. What this project is
 Bilingual (Marathi / English) static website for Saraswati Mandir, Nagpur. Plain HTML, CSS, JavaScript, no build step.
@@ -41,7 +47,7 @@ Note: if a write ever returns 403 "Resource not accessible by integration," the 
 - hostel.html — Working Women's Hostel
 - badminton.html — Capt. Manohar Vaidya Badminton Training Centre
 - khandoba.html — Khandoba Hanuman Devasthan Balwadi
-Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: README.md, CNAME, .nojekyll.
+Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: README.md, CNAME, .nojekyll, PROJECT_SOP.md, CORRECTIONS.md.
 
 ## 4. Content conventions (read before editing text)
 - Bilingual, always in pairs. Every visible text appears twice: once in an element with class "mr" (Marathi) and once with class "en" (English). Edit BOTH versions so the languages stay in sync.
@@ -55,13 +61,14 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 
 ## 6. Start-of-chat checklist
 1. Confirm repo drvsdani-ctrl/saraswati-mandir-website.
-2. Read this PROJECT_SOP.md.
+2. Read this PROJECT_SOP.md, then read CORRECTIONS.md.
 3. Mandate = edit the website on the maintainer's command; commit directly to main.
 4. Instructions come by voice via the speak-app connector; the maintainer names/dates the recording to use.
 5. For any text change, update BOTH mr and en versions.
 6. After committing, note the live site updates in ~1-2 minutes.
+7. If the maintainer gives a correction, append it to CORRECTIONS.md.
 
 ## 7. Change log
-- 2026-07-15: SOP created; GitHub connector installed with write access; commit-to-main workflow confirmed working; speak-app transcription workflow added.
+- 2026-07-15: SOP created; GitHub connector installed with write access; commit-to-main workflow confirmed working; speak-app transcription workflow added; CORRECTIONS.md log added and wired in.
 
 Last updated: 2026-07-15.
