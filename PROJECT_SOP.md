@@ -37,7 +37,7 @@ Bilingual (Marathi / English) static website for Saraswati Mandir, Nagpur. Plain
 2. Edit method: commit directly to `main`. Changes go live in ~1-2 minutes. Use a pull request only for large changes the maintainer wants to preview.
 3. Use clear commit messages.
 4. Fetch the current file fresh before editing (its SHA is required to update it on GitHub).
-5. Verify after editing, checking both language versions.
+5. Verify after editing, checking both language versions. When a commit requires sending the WHOLE file, change only the target text and check for stray/control characters before and after (diff against the clean local copy).
 Note: if a write returns 403 "Resource not accessible by integration," the app was uninstalled — reinstall it at github.com/apps/claude-github-mcp-connector, click Install, select this repo (ignore the "state: Field required" redirect error; the install still registers).
 
 ## 3. Site structure (pages)
@@ -56,7 +56,7 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 - Adding a photo: copy the .jpg into images/ and add one line in the page's gallery section following the existing pattern. Place each photo near its matching activity (main-building photos on the home page, school photos on school.html, etc.).
 
 ## 5. Known pending items (add when material is available)
-- Charitable Commissioner registration number and date (home page).
+- DONE 2026-07-15: Charity Commissioner registration number and date added to the home-page footer — Reg. No. F-259(N), dated 16.04.1962 (both mr/en).
 - Exact years of the school's grant milestones (school.html).
 - A photograph of the Khandoba Balwadi (khandoba.html).
 
@@ -71,5 +71,6 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 
 ## 7. Change log
 - 2026-07-15: SOP created; connector installed with write access; commit-to-main confirmed; speak-app transcription workflow added; CORRECTIONS.md kept as a LOCAL file per maintainer (removed from repo).
+- 2026-07-15: Added Charity Commissioner registration number F-259(N) and date 16.04.1962 to the home-page footer (both languages).
 
 Last updated: 2026-07-15.
