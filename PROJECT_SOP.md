@@ -19,7 +19,7 @@ The main task is to EDIT THIS WEBSITE ON THE MAINTAINER'S COMMAND.
 
 ## 0.1 INSTRUCTION SOURCE — the "speak app" (voice transcripts)
 Edit instructions are usually given by VOICE and reach the assistant as transcripts in the recordings/speak-app connector (list_recordings / get_recording).
-- HOW TO PICK THE RIGHT RECORDING: the maintainer will GIVE THE RECORDING ID (the "code"), or its name/date, usually with a "fetch" command (e.g. "fetch <id>", "fetch 2", "fetch latest website"). If the maintainer says "list", call list_recordings and show a short numbered list so they can pick. Do NOT guess or auto-pick the newest — the speak app holds many unrelated recordings (medical notes, etc.). (No picker artifact is used.)
+- HOW TO PICK THE RIGHT RECORDING: the maintainer will GIVE THE RECORDING ID (the "code"), or its name/date, usually with a "fetch" command (e.g. "fetch <id>", "fetch 2", "fetch latest website"). If the maintainer says "list", call list_recordings and show a short numbered list so they can pick. Do NOT guess or auto-pick the newest — the speak app holds many unrelated recordings (medical notes, etc.). (No picker artifact is used — see section 8.)
 - Fetch that recording's `renderedText`, treat it as the instruction, and prepare the described change (then follow the TOP GUARDRAIL).
 - Because transcription can mishear names/terms, confirm the understood instruction (proper nouns, Marathi/English text, photo placement) as part of the preview.
 - Transcripts may span multiple recordings (one may continue with "Additionally…"); ask if an instruction seems cut off.
@@ -46,7 +46,7 @@ Bilingual (Marathi / English) static website for Saraswati Mandir, Nagpur. Plain
 3. Use clear commit messages.
 4. Fetch the current file fresh before editing (its SHA is required to update it on GitHub).
 5. Verify after editing, checking both language versions. When a commit requires sending the WHOLE file, change only the target text and check for stray/control characters before and after (diff against the clean local copy).
-Note: if a write returns 403 "Resource not accessible by integration," the app was uninstalled — reinstall it at github.com/apps/claude-github-mcp-connector, click Install, select this repo (ignore the "state: Field required" redirect error; the install still registers).
+Note: if a write returns 403 "Resource not accessible by integration," the app is not INSTALLED (authorized is not enough) — install/reinstall it at github.com/apps/claude-github-mcp-connector, click Install, select this repo (ignore the "state: Field required" redirect error; the install still registers).
 
 ## 3. Site structure (pages)
 - index.html — Saraswati Mandir (home, links to all activities)
@@ -56,7 +56,7 @@ Note: if a write returns 403 "Resource not accessible by integration," the app w
 - hostel.html — Working Women's Hostel
 - badminton.html — Capt. Manohar Vaidya Badminton Training Centre
 - khandoba.html — Khandoba Hanuman Devasthan Balwadi
-Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: README.md, CNAME, .nojekyll, PROJECT_SOP.md. (CORRECTIONS.md is LOCAL only.)
+Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: README.md, CNAME, .nojekyll, PROJECT_SOP.md, How_to_Update_the_Website.pdf (maintainer how-to guide, local). (CORRECTIONS.md is LOCAL only.)
 
 ## 4. Content conventions (read before editing text)
 - Bilingual, always in pairs. Every visible text appears twice: once in an element with class "mr" (Marathi) and once with class "en" (English). Edit BOTH versions so the languages stay in sync.
@@ -72,7 +72,7 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 1. Confirm repo drvsdani-ctrl/saraswati-mandir-website; connect local folder B:\saraswati-mandir-website.
 2. Read this PROJECT_SOP.md, then read the local CORRECTIONS.md.
 3. Mandate = edit the website on the maintainer's command; PREVIEW in chat, then commit to main ONLY after password "BUILD".
-4. Instructions come by voice via the speak-app connector; the maintainer fetches a recording by id/name/date.
+4. Instructions come by voice via the speak-app connector; the maintainer fetches a recording by id/name/date ("fetch ...", or "list" to browse).
 5. For any text change, update BOTH mr and en versions.
 6. After committing, note the live site updates in ~1-2 minutes.
 7. If the maintainer gives a correction, append it to the local CORRECTIONS.md.
@@ -81,5 +81,17 @@ Folders: css/ (styles), js/ (scripts incl. main.js), images/ (photos). Other: RE
 - 2026-07-15: SOP created; connector installed with write access; commit-to-main confirmed; speak-app transcription workflow added; CORRECTIONS.md kept as a LOCAL file per maintainer (removed from repo).
 - 2026-07-15: Added Charity Commissioner registration number F-259(N) and date 16.04.1962 to the home-page footer (both languages).
 - 2026-07-15: Added TOP GUARDRAIL — always PREVIEW in chat before any change; do NOT publish/commit until the maintainer gives the password "BUILD".
+- 2026-07-16: Diagnosed connector 403 — the GitHub App needed to be INSTALLED (not just authorized); installed at github.com/apps/claude-github-mcp-connector; connector writes now work (see section 2 note and the local CORRECTIONS.md).
+- 2026-07-16: Dropped the transcript-picker artifact (Cowork artifacts cannot message chat); adopted the simple in-chat "list" / "fetch <id/number/name>" flow.
+- 2026-07-16: Built the maintainer how-to guide How_to_Update_the_Website.pdf (real screenshots + a mic-test step + the BUILD golden rule).
+- 2026-07-16: Logged 5 new lessons to the local CORRECTIONS.md and added section 8 below.
 
-Last updated: 2026-07-15.
+## 8. Producing documents & deliverables (lessons)
+- Large generated files: the Write tool can silently truncate. Write big files (e.g. the HTML for a PDF) via a bash heredoc, or verify line count AND that the final expected content is present. For a PDF, confirm the page count and grep the extracted text for the last section before delivering.
+- One-page deliverables: render to an image and confirm page count = 1 with nothing clipped before sharing.
+- Real screenshots for guides: the maintainer can save PNG files into the local folder; read and crop them (view each crop to verify coordinates). Inline chat images CANNOT be cropped. A how-to guide must show the compose box where "fetch" is typed.
+- Locked files: if a write to a folder file returns "permission denied," it is probably open in a viewer — save under a new name or ask the maintainer to close it.
+- Local-vs-shell sync: the Read/Edit/Write tools act on the real disk (authoritative); the bash mount can be stale. Verify file writes with the Read tool, not only via bash.
+- The maintainer-facing guide is How_to_Update_the_Website.pdf (built from website_guide.html + a crops/ folder of screenshot crops, kept in the local folder / working outputs).
+
+Last updated: 2026-07-16.
