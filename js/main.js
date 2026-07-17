@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
     hdr.appendChild(area);
   }
   var sm = document.querySelector('.brand h1 small');
-  if(sm){ sm.innerHTML = '<span class="mr">स्थापना : २१ जानेवारी १९२१</span><span class="en">Estd. 21 January 1921</span>'; }
+  if(sm){ sm.innerHTML = '<span class="mr">स्थापना : १९२१ • महिलांनी चालवलेली सेवाभावी संस्था</span><span class="en">Estd. 1921 • v/o run by women</span>'; }
   var tb = document.querySelector('.topbar'); if(tb){ tb.remove(); }
   var fi = document.querySelector('footer.site .inner');
   if(fi){
