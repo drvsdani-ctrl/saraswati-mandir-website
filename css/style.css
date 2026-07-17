@@ -32,6 +32,11 @@ li.has-dropdown:hover .dropdown,.dropdown.open{display:flex;}
 nav.main .dropdown a{border-bottom:1px solid rgba(255,255,255,.1);white-space:normal;}
 nav.main .dropdown a.current{background:rgba(255,255,255,.12);}
 .regbar{background:#fff6e8;border:1px solid rgba(224,123,0,.35);border-left:5px solid var(--saffron);border-radius:10px;text-align:center;color:var(--maroon);font-weight:600;font-size:1rem;line-height:1.7;padding:.8rem 1rem;margin:1.5rem 0;}
+.home-split{display:grid;grid-template-columns:290px 1fr;gap:1.4rem;align-items:start;margin-top:1.5rem;}
+.act-side{display:flex;flex-direction:column;gap:8px;}
+.act-side-title{color:var(--maroon);font-size:1.15rem;margin-bottom:.2rem;}
+.act-side a{text-decoration:none;display:block;background:#fff;border:0.5px solid rgba(43,33,24,.12);border-left:4px solid var(--saffron);border-radius:10px;padding:10px 13px;color:var(--maroon);font-weight:600;font-size:.9rem;box-shadow:0 3px 10px rgba(43,33,24,.08);}
+.act-side a:hover{box-shadow:0 6px 16px rgba(43,33,24,.16);}
 .hero{position:relative;max-height:480px;overflow:hidden;background:#333;}
 .hero img{width:100%;height:480px;object-fit:cover;display:block;opacity:1;}
 .hero .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,15,5,.6),rgba(30,15,5,0) 55%);display:flex;align-items:flex-end;}
@@ -84,4 +89,5 @@ footer li{margin:.3rem 0;font-size:.9rem;}
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:200;cursor:zoom-out;}
 .lightbox img{max-width:94vw;max-height:92vh;border-radius:8px;}
 .lightbox.open{display:flex;}
+@media(max-width:760px){.home-split{grid-template-columns:1fr;}}
 @media(max-width:640px){.hero img{height:300px;}.hero .overlay .inner{padding:1.2rem 1rem;}nav.main ul{justify-content:flex-start;}nav.main a{padding:.5rem .6rem;font-size:.82rem;}nav.main .navbtn{padding:.5rem .6rem;font-size:.82rem;}nav.main .dropdown{min-width:220px;}footer .inner{gap:1rem;}.footer-reg{text-align:left;}.regbar{font-size:.9rem;}}
