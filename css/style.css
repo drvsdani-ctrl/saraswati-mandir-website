@@ -84,7 +84,7 @@ footer ul{list-style:none;}
 footer li{margin:.3rem 0;font-size:.9rem;}
 .footer-reg{text-align:right;}
 .footer-reg h4{font-size:1.15rem;}
-.footer-reg p{font-weight:700;font-size:1.1rem;line-height:1.55;}
+.footer-reg p{font-weight:400;font-size:1rem;line-height:1.75;}
 .copyright{border-top:1px solid rgba(255,255,255,.25);text-align:center;font-size:.8rem;padding:.7rem 1rem;}
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:200;cursor:zoom-out;}
 .lightbox img{max-width:94vw;max-height:92vh;border-radius:8px;}
