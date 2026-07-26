@@ -46,7 +46,7 @@ nav.main .dropdown a:hover{background:rgba(255,255,255,.12);}
 .wrap{max-width:1150px;margin:0 auto;padding:2rem 1rem;}
 .section-title{color:var(--maroon);font-size:1.6rem;margin:1.8rem 0 .8rem;position:relative;padding-bottom:.4rem;}
 .section-title::after{content:"";position:absolute;left:0;bottom:0;width:70px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--saffron),var(--teal));}
-.motto{background:linear-gradient(135deg,var(--maroon),#9c3140);color:#ffe9c9;text-align:center;padding:1.6rem 1rem;border-radius:14px;font-size:1.15rem;font-weight:600;margin:1.5rem 0;box-shadow:0 6px 18px rgba(122,31,43,.3);}
+.motto{background:linear-gradient(135deg,var(--maroon),#9c3140);color:#ffe9c9;text-align:center;padding:1.6rem 1rem;border-radius:14px;font-size:1.15rem;font-weight:600;margin:0 0 2rem;box-shadow:0 6px 18px rgba(122,31,43,.3);}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem;margin-top:1.2rem;}
 .card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(43,33,24,.12);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;text-decoration:none;color:var(--ink);}
 .card:hover{transform:translateY(-6px);box-shadow:0 12px 26px rgba(43,33,24,.2);}
