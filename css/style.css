@@ -143,3 +143,11 @@ body.nav-open .nav-backdrop{opacity:1;pointer-events:auto;}
   .brand h1{font-size:1.35rem;}
   .brand h1>span{white-space:normal;}
 }
+/* 2026-07-27 (voice): mobile hero titles fit fully on photos (desktop unchanged) */
+@media(max-width:640px){
+  .hero .overlay .inner{padding:.7rem .8rem;}
+  .hero h2{font-size:1.1rem;}
+  .hero p.tag{font-size:.7rem;padding:.22rem .7rem;margin-top:.3rem;}
+  .hero:has(img[src*="badminton"]) h2{white-space:nowrap;font-size:min(1.1rem,4.1vw);}
+  .hero:has(img[src$="sm-gate.jpg"]) p.tag{white-space:nowrap;font-size:min(.7rem,2.9vw);}
+}
