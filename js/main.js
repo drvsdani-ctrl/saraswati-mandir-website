@@ -50,6 +50,22 @@ document.addEventListener('DOMContentLoaded', function(){
     area.appendChild(nav);
     if(lang) area.appendChild(lang);
     hdr.appendChild(area);
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'nav-toggle';
+    toggle.setAttribute('aria-label', 'Menu');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.innerHTML = '<span></span><span></span><span></span>';
+    hdr.insertBefore(toggle, hdr.firstChild);
+    var backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+    function closeNav(){ document.body.classList.remove('nav-open'); toggle.setAttribute('aria-expanded','false'); }
+    function openNav(){ document.body.classList.add('nav-open'); toggle.setAttribute('aria-expanded','true'); }
+    toggle.addEventListener('click', function(e){ e.stopPropagation(); if(document.body.classList.contains('nav-open')){ closeNav(); } else { openNav(); } });
+    backdrop.addEventListener('click', closeNav);
+    area.querySelectorAll('nav.main a').forEach(function(a){ a.addEventListener('click', closeNav); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeNav(); } });
   }
   var sm = document.querySelector('.brand h1 small');
   if(sm){ sm.innerHTML = '<span class="mr">स्थापना : १९२१<br>महिलांनी चालवलेली सेवाभावी संस्था</span><span class="en">Estd. 1921<br>A charitable organisation run by women</span>'; }
